@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+nav {
+    background-color: #7289da;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.features-section, .about-section, .contact-section {
+    padding: 20px;
+    background-color: white;
+    margin: 10px 0;
+}
+
+.features-section h2, .about-section h2, .contact-section h2 {
+    margin-top: 0;
+}
+
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    width: calc(25% - 20px);
+    margin: 10px;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.dashboard-content, .panel-content {
+    padding: 20px;
+}
+
+.stats {
+    display: flex;
+}
+
+.stat-card {
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+}
+
+.action-btn, .save-btn {
+    background-color: #7289da;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.action-btn:hover, .save-btn:hover {
+    background-color: #5b6e98;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}

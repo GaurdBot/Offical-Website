@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuardBot - Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="GuardBot.png" type="image/png" sizes="32x32">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>GuardBot</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <div id="loginContainer" style="margin-left:auto;">
+            <img id="userAvatar" src="" alt="Profile Pic" style="width:40px; height:40px; border-radius:50%; cursor:pointer;" /> 
+            <div class="profile-menu" id="profileMenu" style="display: inline;">
+                <div class="dropdown-content">
+                    <a href="/dashboard" id="dashboardLink">Dashboard</a>
+                    <a href="/panel" id="panelLink">Panel</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Control Panel</h1>
+        <p>Configure GuardBot settings and customize moderation options.</p>
+    </header>
+
+    <section class="panel-content">
+        <h2>Settings</h2>
+        <form>
+            <div class="form-group">
+                <label for="spamDetection">Enable Auto Spam Detection</label>
+                <select id="spamDetection">
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="autoModLevel">Auto Mod Level</label>
+                <select id="autoModLevel">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <button type="submit" class="save-btn">Save Settings</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 GuardBot. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        const clientId = '1290735211742629898'; // Your Discord application client ID
+        const redirectUri = 'https://gaurdbot.github.io/Offical-Website/'; // Replace with your redirect URI
+        
+        // Get UI components
+        var loginContainer = document.getElementById("loginContainer");
+        var userAvatar = document.getElementById("userAvatar");
+        var profileMenu = document.getElementById("profileMenu");
+    
+        // JavaScript to handle user login (simulate for now)
+        function onAuthorize(user) {
+            // Assuming we have user info after authorization
+            loginContainer.style.display = "none"; // Hide login button
+            userAvatar.src = user.avatarUrl; // Get user's avatar URL from Discord API 
+            profileMenu.style.display = "inline-block"; // Show profile menu
+        }
+    
+        // Simulate user login process (for demonstration)
+        onAuthorize({ avatarUrl: 'https://example.com/avatar.png' }); // Preview user avatar
+    
+        // Handle form submission
+        document.querySelector("form").onsubmit = function(event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            // Get form values
+            const spamDetection = document.getElementById("spamDetection").value;
+            const autoModLevel = document.getElementById("autoModLevel").value;
+    
+            // Simulate saving settings (in a real application, you'd send this to your server)
+            console.log(`Spam Detection: ${spamDetection}, Auto Mod Level: ${autoModLevel}`);
+            alert(`Settings Saved:\nSpam Detection: ${spamDetection}\nAuto Mod Level: ${autoModLevel}`);
+    
+            // Optionally reset the form if needed
+            // this.reset();
+        };
+    </script>
+</body>
+</html>
