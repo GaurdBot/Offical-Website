@@ -15,15 +15,15 @@
         <ul class="nav-links">
             <li><a href="https://discord.gg/Xsbj4HwfVq">Support Server</a></li>
             <li><a href="https://discord.com/oauth2/authorize?client_id=1290735211742629898&permissions=8&integration_type=0&scope=bot+applications.commands">Invite Me</a></li>
-            <li><a href="https://gaurdbot.github.io/Offical-Website/dashboard/">Dashboard</a></li>
-        </ul>
+            <li><a href="https://gaurdbot.github.io/Offical-Website/home/"></a></li>
+        </ul>   
         <div id="loginContainer" style="margin-left:auto;">
             <button id="loginBtn" class="button" onclick="loginWithDiscord()">Login with Discord</button>
             <div class="profile-menu" id="profileMenu" style="display: none;">
                 <img id="userAvatar" src="" alt="Profile Pic" style="width:40px; height:40px; border-radius:50%; cursor:pointer;" /> 
                 <div class="dropdown-content">
-                    <a href="https://gaurdbot.github.io/Offical-Website//dashboard" id="dashboardLink">Dashboard</a>
-                    <a href="https://gaurdbot.github.io/Offical-Website//panel" id="panelLink">Panel</a>
+                    <a href="https://gaurdbot.github.io/Offical-Website/dashboard" id="dashboardLink">Dashboard</a>
+                    <a href="https://gaurdbot.github.io/Offical-Website/panel" id="panelLink">Panel</a>
                 </div>
             </div>
         </div>
@@ -78,11 +78,12 @@
         const userSettings = {};
         const defaultLogo = "https://w7.pngwing.com/pngs/336/242/png-transparent-circle-discord-gaming-messenger-round-icon-popular-services-brands-vol-2-icon.png";
         const clientId = '1290735211742629898'; // replace with your Discord client ID
+        const redirectUri = 'https://gaurdbot.github.io/Offical-Website/home/'; // replace with your redirect URI
 
         // Function to handle Discord login
         function loginWithDiscord() {
             const scope = 'identify guilds'; // add necessary scopes
-            const loginUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&response_type=code&scope=${encodeURIComponent(scope)}`;
+            const loginUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${encodeURIComponent(scope)}`;
             window.location = loginUrl; // Redirect to Discord's OAuth2 authorization URL
         }
 
